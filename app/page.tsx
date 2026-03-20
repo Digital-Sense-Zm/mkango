@@ -42,14 +42,21 @@ type FooterColumn = {
   links: Array<{ label: string; href: string }>;
 };
 
+const imageTheme = {
+  hero: "/images/mkango/IMG_8232.jpeg",
+  stay: "/images/mkango/IMG_0035.jpg",
+  functions: "/images/mkango/OCTOBER.jpg",
+  dining: "/images/mkango/rs=w_1160,h_773.webp",
+  roomsFeature: "/images/mkango/rs=w_1280,h_854.webp",
+};
+
 const experiences: Experience[] = [
   {
     id: "stay",
     title: "Stay",
     description:
       "Choose from Standard Rooms, Junior Suites, Suites, and Apartments. Rack rates on the current hotel site include breakfast, and every room includes air conditioning, satellite television, and tea and coffee.",
-    image:
-      "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80",
+    image: imageTheme.stay,
     cta: "View rooms",
     href: "#rooms",
     Icon: KeyIcon,
@@ -59,8 +66,7 @@ const experiences: Experience[] = [
     title: "Functions",
     description:
       "M'kango is built for meetings and occasions, with 12 conference rooms, private meeting rooms, a marquee for larger events, garden wedding options, and outside catering.",
-    image:
-      "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=80",
+    image: imageTheme.functions,
     cta: "Plan an event",
     href: "#functions",
     Icon: FlagIcon,
@@ -70,8 +76,7 @@ const experiences: Experience[] = [
     title: "Dining",
     description:
       "Baobab Bistro and Chatters Bar cover breakfast, buffet lunch, evening a la carte dining, cocktails, draft beer, and relaxed time in the lounge or on the outdoor patio.",
-    image:
-      "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80",
+    image: imageTheme.dining,
     cta: "See dining",
     href: "#dining",
     Icon: ClocheIcon,
@@ -133,10 +138,14 @@ const proofPoints: ProofPoint[] = [
 ];
 
 const galleryShots = [
-  "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=900&q=80",
+  "/images/mkango/IMG_0025.jpg",
+  "/images/mkango/IMG_0035.jpg",
+  "/images/mkango/IMG_8232.jpeg",
+  "/images/mkango/OCTOBER.jpg",
+  "/images/mkango/rs=w_1160,h_773.webp",
+  "/images/mkango/rs=w_1280,h_768.webp",
+  "/images/mkango/rs=w_1280,h_854.webp",
+  "/images/mkango/Screen_Shot_2021-11-11_at_14.29.13.png",
 ];
 
 const footerColumns: FooterColumn[] = [
@@ -185,14 +194,14 @@ export default function Home() {
           className="relative flex h-screen min-h-[600px] w-full items-center justify-center overflow-hidden text-center text-white"
         >
           <Image
-            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=80"
+            src={imageTheme.hero}
             alt="View across the grounds of M'kango Golfview Hotel"
             fill
             priority
             className="object-cover"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-black/45" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-black/60" />
 
           <div className="relative z-10 mt-16 flex w-full max-w-4xl flex-col items-center px-4">
             <p className="text-xs uppercase tracking-[0.45em] text-white/90 lg:text-sm">
@@ -396,7 +405,7 @@ export default function Home() {
             </div>
             <div className="relative overflow-hidden rounded-[40px]">
               <Image
-                src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=80"
+                src={imageTheme.roomsFeature}
                 alt="Function setup at the hotel"
                 fill
                 className="object-cover brightness-[0.9]"
@@ -413,7 +422,7 @@ export default function Home() {
             className="relative overflow-hidden rounded-[48px] border border-black/5"
           >
             <Image
-              src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1900&q=80"
+              src={imageTheme.dining}
               alt="Dining at M'kango Golfview Hotel"
               fill
               className="object-cover"
@@ -453,7 +462,7 @@ export default function Home() {
                 <h2 className="text-3xl">A closer look at the atmosphere of the hotel.</h2>
               </div>
               <p className="max-w-2xl text-base text-black/70">
-                The visual language here is calmer and more grounded, reflecting a business minded hotel that also knows how to host, feed, and welcome people properly.
+                The imagery now comes directly from the current project assets so the site feels visually tied to the property instead of to generic travel photography.
               </p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -554,9 +563,15 @@ export default function Home() {
             className="grid gap-8 rounded-[36px] border border-black/5 bg-white/80 p-10 lg:grid-cols-[1.1fr_1fr]"
           >
             <div className="space-y-6">
-              <div className="flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-none border border-black/10">
-                  <span className="text-lg font-semibold">M&apos;G</span>
+              <div className="flex items-center gap-4">
+                <div className="flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-full border border-black/10 bg-white shadow-[0_18px_40px_rgba(15,61,46,0.08)]">
+                  <Image
+                    src="/logo/favicon.svg"
+                    alt="M'kango Golfview Hotel mark"
+                    width={40}
+                    height={46}
+                    className="h-10 w-auto"
+                  />
                 </div>
                 <p className="text-sm uppercase tracking-[0.3em] text-black/60">
                   Conference venue and full service hotel in Lusaka
@@ -698,3 +713,4 @@ function ClubhouseIcon() {
     </svg>
   );
 }
+

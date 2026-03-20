@@ -223,7 +223,7 @@ const CheckoutExperience = () => {
   };
 
   return (
-    <div className="bg-canvas px-4 pb-16 pt-32">
+    <div className="bg-canvas px-4 pb-16 pt-8">
       <Header variant="dark" />
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 lg:flex-row">
         <section className="w-full rounded-[32px] border border-[#e0d8cc] bg-white/90 p-8 shadow-[0_30px_80px_rgba(12,41,32,0.08)] lg:w-2/5">
@@ -489,4 +489,5 @@ const CheckoutExperience = () => {
 };
 
 export default CheckoutExperience;
+
 

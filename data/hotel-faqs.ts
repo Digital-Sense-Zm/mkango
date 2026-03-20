@@ -1,42 +1,47 @@
 export const hotelFaqs = [
   {
-    question: "What room types does the hotel offer?",
+    question: "What room types do you offer?",
     answer:
-      "The current rooms page lists four categories: Standard Room, Junior Suite, Suite, and Apartments.",
+      "We offer Standard Rooms, Junior Suites, Suites, and Apartments. If you’d like help choosing the right option for your stay, I can assist or connect you with our reservations team.",
   },
   {
     question: "Is breakfast included?",
     answer:
-      "Yes. The current hotel site says rack rates are inclusive of breakfast.",
+      "Yes, breakfast is included in our rack rates. Guests can enjoy either a full breakfast or a lighter continental option.",
   },
   {
     question: "What dining options are available?",
     answer:
-      "Guests can dine at Baobab Bistro and order drinks at Chatters Bar. The site also mentions breakfast, buffet lunch, evening a la carte dining, the lounge, and the outdoor patio.",
+      "You can dine at Baobab Bistro for local and international meals, and enjoy drinks at Chatters Bar. We also offer breakfast, buffet lunch, and evening à la carte dining with indoor and outdoor seating.",
   },
   {
-    question: "What facilities do you have for meetings and events?",
+    question: "Do you have conference or event facilities?",
     answer:
-      "The hotel lists 12 conference rooms, private meeting rooms, a marquee for more than 200 guests, garden wedding options, and outside catering.",
+      "Yes, we have 12 conference rooms, private meeting spaces, and a marquee for larger events of over 200 guests. We also host weddings and offer outside catering. I can connect you with our events team for availability and quotations.",
   },
   {
     question: "Do you have Wi Fi, a gym, or a spa?",
     answer:
-      "Yes. The current site mentions complimentary high speed Wi Fi, plus a gym and spa for hotel residents.",
+      "Yes, we offer complimentary high speed Wi Fi, and guests have access to a gym and spa during their stay.",
   },
   {
-    question: "What are your check in and check out times?",
+    question: "What time is check-in and check-out?",
     answer:
-      "The current hotel site does not publish check in or check out times, so the reservations team should confirm those details directly.",
+      "Our check-in and check-out times are not published online. I can help you confirm this with our reservations team if you’d like.",
   },
   {
-    question: "Do you offer corporate rates or specials?",
+    question: "Do you offer corporate rates or special offers?",
     answer:
-      "The live rooms page includes Corporate and Specials and asks guests to contact the hotel directly for current details.",
+      "Yes, we do offer corporate rates and special arrangements. These are handled directly by our team, so I can help connect you for the latest options.",
   },
   {
     question: "Do you offer airport transfers?",
     answer:
-      "The current hotel site does not publish airport transfer details. Please contact reservations for confirmation.",
+      "Airport transfers may be available, but details are handled directly by our team. I can assist in arranging this for you.",
+  },
+  {
+    question: "Why is my bill higher than the room rate?",
+    answer:
+      "In Zambia, hotel bills may include a service charge and a tourism levy in addition to the room rate. The front desk or reservations team can provide a full breakdown of your specific charges.",
   },
 ];

@@ -10,8 +10,7 @@ export const rooms: Room[] = [
       "Single or double occupancy with a queen bed or twin beds, air conditioning, satellite television, tea and coffee, and a shower or bath.",
     pricePerNightZMW: 11100,
     pricePerNightUSD: 520,
-    featuredImage:
-      "https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=2000&q=80",
+    featuredImage: "/images/mkango/IMG_0025.jpg",
     amenities: [
       "Single occupancy available",
       "Double occupancy available",
@@ -31,8 +30,7 @@ export const rooms: Room[] = [
       "Single or double occupancy with a queen bed, full bath, sitting area, air conditioning, satellite television, and tea and coffee.",
     pricePerNightZMW: 8100,
     pricePerNightUSD: 380,
-    featuredImage:
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=2000&q=80",
+    featuredImage: "/images/mkango/IMG_0035.jpg",
     amenities: [
       "Single occupancy available",
       "Double occupancy available",
@@ -52,8 +50,7 @@ export const rooms: Room[] = [
       "Single or double occupancy with two queen beds, a full bath, satellite television, and either a sitting area or a separate sitting room. Suites include a kitchenette.",
     pricePerNightZMW: 6900,
     pricePerNightUSD: 320,
-    featuredImage:
-      "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=2000&q=80",
+    featuredImage: "/images/mkango/rs=w_1280,h_768.webp",
     amenities: [
       "Single occupancy available",
       "Double occupancy available",
@@ -74,8 +71,7 @@ export const rooms: Room[] = [
       "Single or double occupancy with two queen beds, a full bath, satellite television, and either a sitting area or a separate sitting room. Double occupancy apartments include a kitchenette.",
     pricePerNightZMW: 13400,
     pricePerNightUSD: 640,
-    featuredImage:
-      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=2000&q=80",
+    featuredImage: "/images/mkango/rs=w_1280,h_854.webp",
     amenities: [
       "Single occupancy available",
       "Double occupancy available",

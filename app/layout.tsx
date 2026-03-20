@@ -14,6 +14,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "M'kango Golfview Hotel" }],
   metadataBase: new URL("https://mkango.local"),
+  icons: {
+    icon: "/logo/favicon.svg",
+    shortcut: "/logo/favicon.svg",
+    apple: "/logo/favicon.svg",
+  },
 };
 
 export default function RootLayout({

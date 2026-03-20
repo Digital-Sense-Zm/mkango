@@ -9,7 +9,7 @@ export default function WhatsAppWidget() {
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
       {isOpen && (
-        <div className="mb-2 origin-bottom-right transition-transform">
+        <div className="mb-3 origin-bottom-right transition-transform">
           <ChatPanel onClose={() => setIsOpen(false)} />
         </div>
       )}
@@ -18,10 +18,13 @@ export default function WhatsAppWidget() {
           type="button"
           aria-expanded={isOpen}
           onClick={() => setIsOpen(true)}
-          className="whatsapp-shadow flex h-14 w-14 items-center justify-center rounded-none bg-[var(--color-emerald-dark)] text-white transition hover:bg-[var(--color-emerald-deep)] focus:outline-none focus-visible:ring-4 focus-visible:ring-white/50"
+          className="relative flex h-[62px] w-[62px] items-center justify-center rounded-full border-[3px] border-white bg-[#25D366] text-white shadow-[0_16px_34px_rgba(37,211,102,0.42)] transition hover:scale-[1.03] hover:bg-[#22c75a] focus:outline-none focus-visible:ring-4 focus-visible:ring-[#25D366]/30"
         >
-          <span className="sr-only">Open hotel guest desk</span>
+          <span className="sr-only">Open WhatsApp guest desk</span>
           <WhatsAppIcon />
+          <span className="absolute right-0 top-0 flex h-[19px] w-[19px] items-center justify-center rounded-full border-2 border-white bg-[#ff3b30] text-[10px] font-bold leading-none text-white shadow-[0_8px_18px_rgba(255,59,48,0.35)]">
+            1
+          </span>
         </button>
       )}
     </div>
@@ -30,11 +33,11 @@ export default function WhatsAppWidget() {
 
 function WhatsAppIcon() {
   return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path
         d="M12 3a9 9 0 0 0-7.67 13.62L3.5 21l4.54-.75A9 9 0 1 0 12 3Z"
         stroke="currentColor"
-        strokeWidth="1.4"
+        strokeWidth="1.7"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
