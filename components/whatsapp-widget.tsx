@@ -1,7 +1,7 @@
 'use client';
 
-import Link from "next/link";
 import { useState } from "react";
+import { ChatPanel } from "./ai/chat-panel";
 
 export default function WhatsAppWidget() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,36 +9,21 @@ export default function WhatsAppWidget() {
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
       {isOpen && (
-        <div className="w-72 rounded-3xl border border-black/10 bg-white/95 p-4 text-sm shadow-[0_45px_90px_rgba(15,61,46,0.18)]">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-xs uppercase tracking-[0.3em] text-[var(--color-fern)]">Concierge</p>
-              <p className="text-base font-semibold">M&apos;kango Golfview</p>
-            </div>
-            <span className="text-xs text-black/60">06:00 - 23:00 CAT</span>
-          </div>
-          <p className="mt-3 text-black/70">
-            Tell us when you plan to arrive and we will line up transfers, tee times, and dining.
-          </p>
-          <Link
-            href="https://wa.me/260971000000"
-            target="_blank"
-            rel="noreferrer"
-            className="mt-4 inline-flex w-full items-center justify-center rounded-none bg-[var(--color-emerald-dark)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-[var(--color-emerald-deep)]"
-          >
-            Continue on WhatsApp
-          </Link>
+        <div className="mb-2 origin-bottom-right transition-transform">
+          <ChatPanel onClose={() => setIsOpen(false)} />
         </div>
       )}
-      <button
-        type="button"
-        aria-expanded={isOpen}
-        onClick={() => setIsOpen((prev) => !prev)}
-        className="whatsapp-shadow flex h-14 w-14 items-center justify-center rounded-none bg-[var(--color-emerald-dark)] text-white transition hover:bg-[var(--color-emerald-deep)] focus:outline-none focus-visible:ring-4 focus-visible:ring-white/50"
-      >
-        <span className="sr-only">Toggle WhatsApp concierge</span>
-        <WhatsAppIcon />
-      </button>
+      {!isOpen && (
+        <button
+          type="button"
+          aria-expanded={isOpen}
+          onClick={() => setIsOpen(true)}
+          className="whatsapp-shadow flex h-14 w-14 items-center justify-center rounded-none bg-[var(--color-emerald-dark)] text-white transition hover:bg-[var(--color-emerald-deep)] focus:outline-none focus-visible:ring-4 focus-visible:ring-white/50"
+        >
+          <span className="sr-only">Open hotel guest desk</span>
+          <WhatsAppIcon />
+        </button>
+      )}
     </div>
   );
 }

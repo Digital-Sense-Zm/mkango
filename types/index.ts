@@ -1,7 +1,9 @@
-﻿export interface Room {
+export interface Room {
   id: string;
   title: string;
+  category: string;
   slug: string;
+  summary: string;
   pricePerNightZMW: number;
   pricePerNightUSD: number;
   featuredImage: string;

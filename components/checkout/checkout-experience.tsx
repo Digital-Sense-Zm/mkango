@@ -33,12 +33,6 @@ const formatZMW = new Intl.NumberFormat("en-ZM", {
   minimumFractionDigits: 0,
 });
 
-const formatUSD = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD",
-  minimumFractionDigits: 0,
-});
-
 const formatDateRangePart = (value: string) =>
   new Date(value).toLocaleDateString("en-US", {
     month: "short",
@@ -46,8 +40,8 @@ const formatDateRangePart = (value: string) =>
   });
 
 const paymentCtas: Record<PaymentToggleValue, string> = {
-  card: "Authorizing secure payment...",
-  mobile_money: "Awaiting Mobile Money authorization...",
+  card: "Processing secure payment...",
+  mobile_money: "Awaiting Mobile Money approval...",
 };
 
 const paymentOptions: { value: PaymentToggleValue; label: string }[] = [
@@ -222,7 +216,7 @@ const CheckoutExperience = () => {
       router.push(`/success?${params.toString()}`);
     } catch (err) {
       console.error(err);
-      setError("We couldn't finish the booking. Please try again.");
+      setError("We couldn't finish the reservation. Please try again.");
     } finally {
       setIsProcessing(false);
     }
@@ -235,8 +229,8 @@ const CheckoutExperience = () => {
         <section className="w-full rounded-[32px] border border-[#e0d8cc] bg-white/90 p-8 shadow-[0_30px_80px_rgba(12,41,32,0.08)] lg:w-2/5">
           <div className="space-y-6">
             <div className="flex items-center justify-between gap-4">
-              <SectionTitle title="Order Summary" />
-              <Pill>Free Cancellation � 24h</Pill>
+              <SectionTitle title="Reservation Summary" />
+              <Pill>Breakfast included in rack rates</Pill>
             </div>
             {activeRoom && (
               <div className="space-y-6">
@@ -257,7 +251,7 @@ const CheckoutExperience = () => {
                         {activeRoom.title}
                       </h2>
                       <p className="text-sm text-[#736b5f]">
-                        {formatUSD.format(activeRoom.pricePerNightUSD)} / night
+                        Current rates confirmed by reservations
                       </p>
                     </div>
                     <select
@@ -288,7 +282,7 @@ const CheckoutExperience = () => {
                       className={fieldClass}
                     />
                     <p className="text-xs text-[#6b6458]">
-                      {formatDateRangePart(checkIn)} � 15:00 local time
+                      {formatDateRangePart(checkIn)} selected
                     </p>
                   </div>
                   <div className="space-y-2">
@@ -300,27 +294,27 @@ const CheckoutExperience = () => {
                       className={fieldClass}
                     />
                     <p className="text-xs text-[#6b6458]">
-                      {formatDateRangePart(checkOut)} � 11:00 local time
+                      {formatDateRangePart(checkOut)} selected
                     </p>
                   </div>
                 </div>
                 <div className="rounded-3xl bg-[#f8f5f0] p-5">
                   <div className="flex items-center justify-between text-sm text-[#6c665b]">
                     <span>
-                      Room rate � {nights} night{nights > 1 ? "s" : ""}
+                      Estimated stay total for {nights} night{nights > 1 ? "s" : ""}
                     </span>
                     <span>{formatZMW.format(breakdown.base)}</span>
                   </div>
                   <div className="flex items-center justify-between text-sm text-[#6c665b]">
-                    <span>Taxes & tourism levy</span>
+                    <span>Estimated taxes and levies</span>
                     <span>{formatZMW.format(breakdown.taxes)}</span>
                   </div>
                   <div className="mt-4 flex items-center justify-between text-lg font-semibold">
-                    <span>Total due</span>
+                    <span>Estimated amount</span>
                     <span>{formatZMW.format(totalDisplay)}</span>
                   </div>
                   <p className="mt-2 text-xs text-[#6f695d]">
-                    Your card/mobile wallet will be charged upon confirmation.
+                    For corporate rates or specials, contact the hotel directly before payment.
                   </p>
                 </div>
               </div>
@@ -331,7 +325,7 @@ const CheckoutExperience = () => {
         <section className="w-full rounded-[32px] border border-[#d6cbbd] bg-white/95 p-8 shadow-[0_30px_90px_rgba(0,0,0,0.08)] lg:w-3/5">
           <form className="space-y-8" onSubmit={handleSubmit}>
             <div className="space-y-3">
-              <SectionTitle title="Guest" />
+              <SectionTitle title="Guest Details" />
               <div className="grid gap-4 md:grid-cols-2">
                 <input
                   className={fieldClass}
@@ -452,11 +446,11 @@ const CheckoutExperience = () => {
                         onChange={(event) => setMobileNumber(event.target.value)}
                       />
                       <p className="text-xs text-[#6b6458]">
-                        A push notification will be sent to this number to authorize the ZMW {totalDisplay.toLocaleString()} payment.
+                        A push notification will be sent to this number so you can approve the payment.
                       </p>
                     </div>
                     <div className="rounded-2xl border border-[#ebdcc1] bg-[#fdfaf5] p-3 text-xs text-[#746955]">
-                      <strong>Note:</strong> Mobile payments are supported for Zambia only. Clients outside Zambia should pay with a credit or debit card.
+                      <strong>Note:</strong> Mobile payments are most practical for Zambia numbers. Guests outside Zambia should use a credit or debit card.
                     </div>
                   </div>
                 </div>
@@ -468,7 +462,7 @@ const CheckoutExperience = () => {
             <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
               <div>
                 <p className="text-xs uppercase tracking-[0.3em] text-[#7a7368]">
-                  Amount due now
+                  Estimated total
                 </p>
                 <p className="text-2xl font-semibold">
                   {formatZMW.format(totalDisplay)}
@@ -484,7 +478,7 @@ const CheckoutExperience = () => {
                 }`}
               >
                 {isProcessing && <Spinner />}
-                {isProcessing ? paymentCtas[paymentMethod] : "Confirm Booking"}
+                {isProcessing ? paymentCtas[paymentMethod] : "Continue Reservation"}
               </button>
             </div>
           </form>
@@ -495,3 +489,4 @@ const CheckoutExperience = () => {
 };
 
 export default CheckoutExperience;
+

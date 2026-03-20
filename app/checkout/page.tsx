@@ -3,7 +3,7 @@ import CheckoutExperience from "@/components/checkout/checkout-experience";
 
 const CheckoutPage = () => {
   return (
-    <Suspense fallback={<div>Loading checkout...</div>}>
+    <Suspense fallback={<div>Loading reservation form...</div>}>
       <CheckoutExperience />
     </Suspense>
   );
