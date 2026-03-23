@@ -47,9 +47,9 @@ type FooterColumn = {
 
 const imageTheme = {
   hero: "/images/mkango/IMG_8232.jpeg",
-  stay: "/images/mkango/rooms/standard.webp",
+  stay: "/images/mkango/rooms/standard.png",
   functions: "/images/mkango/functions/wedding.png",
-  dining: "/images/mkango/new/restaurant.png",
+  dining: "/images/mkango/restaurant.png",
   roomsFeature: "/images/mkango/functions/conference.png",
 };
 
@@ -143,14 +143,14 @@ const proofPoints: ProofPoint[] = [
 ];
 
 const galleryShots = [
-  "/images/mkango/new/lobby.png",
-  "/images/mkango/new/pool.png",
-  "/images/mkango/new/gym.png",
-  "/images/mkango/new/restaurant.png",
-  "/images/mkango/new/meal.png",
-  "/images/mkango/new/gate.png",
-  "/images/mkango/new/afrotheme.png",
-  "/images/mkango/new/gazelle.png",
+  "/images/mkango/lobby.png",
+  "/images/mkango/pool.png",
+  "/images/mkango/gym.png",
+  "/images/mkango/restaurant.png",
+  "/images/mkango/meal.png",
+  "/images/mkango/gate.png",
+  "/images/mkango/afrotheme.png",
+  "/images/mkango/gazelle.png",
 ];
 
 const footerColumns: FooterColumn[] = [
